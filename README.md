@@ -1,7 +1,23 @@
 ```markdown
 # OmniStat
 
+
 A lightweight CLI tool to monitor system resources (CPU, RAM, Storage, Temperature, and Battery) using Python and `psutil`.
+
+---
+
+## ⚠️ Important: Hardware & OS Compatibility
+
+OmniStat was created and tested specifically on:
+* **Operating System:** Void Linux
+* **Hardware:** AMD CPU, NVMe SSD, and AMD GPU
+
+> **Note for other systems:** 
+> Temperature sensors (such as `k10temp`, `acpitz`, `nvme`, and `amdgpu`) rely heavily on specific Linux kernel modules and hardware vendors. 
+> 
+> If you run this script on Windows, macOS, or non-AMD hardware (like Intel or NVIDIA), certain temperature monitoring functions may throw errors or return no output.
+
+---
 
 ## Features
 
@@ -11,43 +27,50 @@ A lightweight CLI tool to monitor system resources (CPU, RAM, Storage, Temperatu
 * **Hardware Temperature:** Monitor CPU, NVMe SSD, and GPU temperatures.
 * **Battery Status:** View charge percentage, remaining time, and power state.
 
-## Hardware & OS Compatibility
-
-OmniStat was created and tested on **Void Linux** using an **AMD CPU**, **NVMe SSD**, and **AMD GPU**. 
-
-*Some hardware temperature sensors (like `k10temp`, `acpitz`, `nvme`, or `amdgpu`) depend heavily on specific kernel modules and hardware vendors. If you run this script on other operating systems (like Windows or macOS) or non-AMD hardware, certain temperature functions may show errors or return no output.*
+---
+```
 
 ## Installation & Setup
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/Swayam-Swapnila-Das7/OmniStat.git](https://github.com/Swayam-Swapnila-Das7/OmniStat.git)
-   cd OmniStat
+### 1. Clone the repository
+
+```bash
+git clone [https://github.com/Swayam-Swapnila-Das7/OmniStat.git](https://github.com/Swayam-Swapnila-Das7/OmniStat.git)
 
 ```
 
-2. **Create and activate a virtual environment (Recommended):**
+```bash
+cd OmniStat
+
+```
+
+### 2. Create and activate a virtual environment (Recommended)
+
 ```bash
 python -m venv venv
+
+```
+
+```bash
 source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
 ```
 
+### 3. Install dependencies
 
-3. **Install dependencies:**
 ```bash
 pip install -r requirements.txt
 
 ```
 
-
+---
 
 ## Usage
 
 Run the script from your terminal with one or more options:
 
 ```bash
-python OmniStat.py [options]
+python script.py [options]
 
 ```
 
@@ -60,6 +83,8 @@ python OmniStat.py [options]
 * `-b` : Check battery percentage and time left
 
 *Note: You can use more than one function at a time just by adding a space between them (e.g., `python script.py -c -r`).*
+
+---
 
 ## Author
 
