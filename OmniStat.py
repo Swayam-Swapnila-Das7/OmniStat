@@ -74,7 +74,7 @@ def check_temperature() :
 			print(color.YELLOW+f'      {label}   {sensor.current} °C'+color.RESET)
 	
 	if 'acpitz' in temperature :
-		print(color.BLUE+'\n[+] NVMe SSD TEMPERATURE : '+color.RESET)
+		print(color.BLUE+'\n[+] MOTHERBOARD(CPU Socket) TEMPERATURE : '+color.RESET)
 		print(color.DARKCYAN+'      Label   Temperature'+color.RESET)
 		print(color.DARKCYAN+'      -----   -----------'+color.RESET)
 		for sensor in temperature['acpitz'] :
@@ -82,7 +82,7 @@ def check_temperature() :
 			print(color.YELLOW+f'      {label}   {sensor.current} °C'+color.RESET)
 
 	if 'nvme' in temperature :
-		print(color.BLUE+'\n[+]CPU CORE TEMPERATURE : '+color.RESET)
+		print(color.BLUE+'\n[+] NVMe SSD TEMPERATURE : '+color.RESET)
 		print(color.DARKCYAN+'      Label   Temperature'+color.RESET)
 		print(color.DARKCYAN+'      -----   -----------'+color.RESET)
 		for sensor in temperature['nvme'] :
