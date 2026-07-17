@@ -70,12 +70,12 @@ pip install -r requirements.txt
 Run the script from your terminal with one or more options:
 
 ```bash
-python script.py [options]
+python OmniStat.py [options]
 
 ```
 or Run this command to open help menu
 ```bash
-python script.py
+python OmniStat.py
 
 ```
 
