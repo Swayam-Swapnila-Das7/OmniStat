@@ -87,7 +87,7 @@ python OmniStat.py
 * `-t` : Monitor hardware temperatures
 * `-b` : Check battery percentage and time left
 
-*Note: You can use more than one function at a time just by adding a space between them (e.g., `python script.py -c -r`).*
+*Note: You can use more than one function at a time just by adding a space between them (e.g., `python OmniStat.py -c -r`).*
 
 ---
 
