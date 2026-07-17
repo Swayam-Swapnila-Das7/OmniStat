@@ -6,13 +6,13 @@ A lightweight CLI tool to monitor system resources (CPU, RAM, Storage, Temperatu
 
 ---
 
-## ⚠️ Important: Hardware & OS Compatibility
+⚠️ Important: Hardware & OS Compatibility
 
 OmniStat was created and tested specifically on:
-* **Operating System:** Void Linux
-* **Hardware:** AMD CPU, NVMe SSD, and AMD GPU
+* Operating System: Void Linux
+* Hardware: AMD CPU, NVMe SSD, and AMD GPU
 
-> **Note for other systems:** 
+> Note for other systems:
 > Temperature sensors (such as `k10temp`, `acpitz`, `nvme`, and `amdgpu`) rely heavily on specific Linux kernel modules and hardware vendors. 
 > 
 > If you run this script on Windows, macOS, or non-AMD hardware (like Intel or NVIDIA), certain temperature monitoring functions may throw errors or return no output.
@@ -21,11 +21,11 @@ OmniStat was created and tested specifically on:
 
 ## Features
 
-* **CPU Status:** Monitor core count and excessive load.
-* **Disk Status:** Check total, used, and free storage space.
-* **RAM Status:** Track memory usage and availability.
-* **Hardware Temperature:** Monitor CPU, NVMe SSD, and GPU temperatures.
-* **Battery Status:** View charge percentage, remaining time, and power state.
+* CPU Status: Monitor core count and excessive load.
+* Disk Status: Check total, used, and free storage space.
+* RAM Status: Track memory usage and availability.
+* Hardware Temperature: Monitor CPU, NVMe SSD, and GPU temperatures.
+* Battery Status: View charge percentage, remaining time, and power state.
 
 ---
 ```
@@ -35,7 +35,7 @@ OmniStat was created and tested specifically on:
 ### 1. Clone the repository
 
 ```bash
-git clone [https://github.com/Swayam-Swapnila-Das7/OmniStat.git](https://github.com/Swayam-Swapnila-Das7/OmniStat.git)
+git clone https://github.com/Swayam-Swapnila-Das7/OmniStat.git
 
 ```
 
@@ -73,6 +73,11 @@ Run the script from your terminal with one or more options:
 python script.py [options]
 
 ```
+or Run this command to open help menu
+```bash
+python script.py
+
+```
 
 ### Options
 
@@ -91,7 +96,4 @@ python script.py [options]
 * **Swayam Swapnila Das**
 * GitHub: [Swayam-Swapnila-Das7](https://github.com/Swayam-Swapnila-Das7)
 * LinkedIn: [swayam-swapnila-das](https://www.google.com/search?q=https://linkedin.com/in/swayam-swapnila-das)
-
-```
-
-```
+  ```
