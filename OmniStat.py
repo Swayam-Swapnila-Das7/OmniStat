@@ -2,9 +2,11 @@ try :
 	import psutil
 	import sys
 except ModuleNotFoundError :
-	print('Module not found')
+	print('[WARRNING] Module not found')
+	exit()
 except Exception as e :
-	print(e)
+	print(f'[WARRNING] : {e}')
+	exit()
 
 GiB = 1024 ** 3
 MiB = 1024 ** 2
