@@ -115,7 +115,7 @@ def check_battery() :
 		
 
 	print(color.PURPLE+'\n\n=========== BATTERY STATUS CHECK ==========='+color.RESET)
-	print(color.YELLOW+f'  CHARGE : {battery.percent:.2f}\n  TIME LEFT : {hh}:{mm}:{ss}\n  POWER PLUGGED STATUS : {plug_status}'+color.RESET)
+	print(color.YELLOW+f'  CHARGE : {battery.percent:.2f} %\n  TIME LEFT : {hh}:{mm}:{ss}\n  POWER PLUGGED STATUS : {plug_status}'+color.RESET)
 
 def show_help() :
 	help_text = '''
