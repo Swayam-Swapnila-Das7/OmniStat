@@ -33,9 +33,9 @@ def check_disk_status() :
 	print(color.YELLOW+f' Free Space : {free_space:.2f} GiB'+color.RESET)
 
 	if disk.percent > 85 :
-		print(color.RED+f' [WARRNING] You are running out of storage soon !\n  Now your disk is {disk.percent}% in used !'+color.RESET)
+		print(color.RED+f' [WARRNING] You are running out of storage soon !\n  Now your disk is {disk.percent:.2f}% in used !'+color.RESET)
 	else :
-		print(color.GREEN+f' [SAFE] You have good enough storage .\n  Your disk is {disk.percent}% used .'+color.RESET)
+		print(color.GREEN+f' [SAFE] You have good enough storage .\n  Your disk is {disk.percent:.2f} % used .'+color.RESET)
 
 def check_cpu_status():
 
@@ -60,9 +60,9 @@ def check_ram_status():
 	print(color.YELLOW+f' Available RAM : {available_ram:.2f} GiB'+color.RESET)
 
 	if ram.percent > 85 :
-		print(color.RED+f' [WARRNING] Your RAM is running out soon !\n  Now your RAM is {ram.percent}% in used !'+color.RESET)
+		print(color.RED+f' [WARRNING] Your RAM is running out soon !\n  Now your RAM is {ram.percent:.2f}% in used !'+color.RESET)
 	else :
-		print(color.GREEN+f' [SAFE] You have good enough RAM .\n  Your RAM is {ram.percent}% used .'+color.RESET)
+		print(color.GREEN+f' [SAFE] You have good enough RAM .\n  Your RAM is {ram.percent:.2f}% used .'+color.RESET)
 
 def check_temperature() :
 	temperature = psutil.sensors_temperatures(fahrenheit=False)
@@ -73,7 +73,7 @@ def check_temperature() :
 		print(color.DARKCYAN+'      -----   -----------'+color.RESET)
 		for sensor in temperature['k10temp'] :
 			label = sensor.label if sensor.label else "Core"
-			print(color.YELLOW+f'      {label}   {sensor.current} °C'+color.RESET)
+			print(color.YELLOW+f'      {label}   {sensor.current:.2f} °C'+color.RESET)
 	
 	if 'acpitz' in temperature :
 		print(color.BLUE+'\n[+] MOTHERBOARD(CPU Socket) TEMPERATURE : '+color.RESET)
@@ -81,7 +81,7 @@ def check_temperature() :
 		print(color.DARKCYAN+'      -----   -----------'+color.RESET)
 		for sensor in temperature['acpitz'] :
 			label = sensor.label if sensor.label else "BOARD"
-			print(color.YELLOW+f'      {label}   {sensor.current} °C'+color.RESET)
+			print(color.YELLOW+f'      {label}   {sensor.current:.2f} °C'+color.RESET)
 
 	if 'nvme' in temperature :
 		print(color.BLUE+'\n[+] NVMe SSD TEMPERATURE : '+color.RESET)
@@ -89,7 +89,7 @@ def check_temperature() :
 		print(color.DARKCYAN+'      -----   -----------'+color.RESET)
 		for sensor in temperature['nvme'] :
 			label = sensor.label if sensor.label else "SSD"
-			print(color.YELLOW+f'      {label}   {sensor.current} °C'+color.RESET)
+			print(color.YELLOW+f'      {label}   {sensor.current:.2f} °C'+color.RESET)
 
 	if 'amdgpu' in temperature :
 		print(color.BLUE+'\n[+]GPU CORE TEMPERATURE : '+color.RESET)
@@ -97,7 +97,7 @@ def check_temperature() :
 		print(color.DARKCYAN+'      -----   -----------'+color.RESET)
 		for sensor in temperature['amdgpu'] :
 			label = sensor.label if sensor.label else "GPU"
-			print(color.YELLOW+f'      {label}   {sensor.current} °C'+color.RESET)
+			print(color.YELLOW+f'      {label}   {sensor.current:.2f} °C'+color.RESET)
 
 def check_battery() :
 	battery = psutil.sensors_battery()
