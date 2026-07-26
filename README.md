@@ -14,8 +14,7 @@ OmniStat was created and tested specifically on:
 
 > Note for other systems:
 > Temperature sensors (such as `k10temp`, `acpitz`, `nvme`, and `amdgpu`) rely heavily on specific Linux kernel modules and hardware vendors. 
-> 
-> If you run this script on Windows, macOS, or non-AMD hardware (like Intel or NVIDIA), certain temperature monitoring functions may throw errors or return no output.
+> If you run this script on Windows, macOS, or non-AMD hardware (like Intel or NVIDIA), certain temperature monitoring functions may not work due to certain restrictions.
 
 ---
 
