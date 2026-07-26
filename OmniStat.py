@@ -163,7 +163,10 @@ def main():
 		show_help()
 	for arg in arguments :
 		action = system_tools.get(arg.strip())
-		action()
+		try :
+			action()
+		except Exception as e :
+			print(color.BLUE +f' Apologies, it appears this function is not operating correctly due to potential restriction or limitations. !'+color.RESET)
 
 if __name__ == '__main__':
 	main()
