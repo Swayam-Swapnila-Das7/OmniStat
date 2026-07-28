@@ -19,6 +19,7 @@ class color :
 	DARKCYAN = '\033[36m'
 	PURPLE = "\033[1;35m"
 	RESET  = "\033[0m"
+
 def check_disk_status() :
 
 	print(color.PURPLE+'\n\n=========== SSD/HDD STORAGE STATUS ===========\n'+color.RESET)
@@ -39,6 +40,7 @@ def check_disk_status() :
 			print(color.RED+f' [WARRNING] You are running out of storage soon !\n  Now your disk in {color.BLUE}\'{mount_point}\'{color.RESET} is {disk.percent:.2f}% in used !'+color.RESET)
 		else :
 			print(color.GREEN+f' [SAFE] You have good enough storage .\n  Your disk in {color.BLUE}\'{mount_point}\'{color.RESET} is {disk.percent:.2f} % used .'+color.RESET)
+
 
 def check_cpu_status():
 
@@ -82,7 +84,6 @@ def check_ram_status():
 			print(color.RED+f' [WARRNING] Your SWAP MEMORY RAM is running out soon !\n  Now your SWAP RAM is {swap_memory.percent:.2f}% in used !'+color.RESET)
 		else :
 			print(color.GREEN+f' [SAFE] You have good enough SWAP RAM .\n  Your RAM is {swap_memory.percent:.2f}% used .'+color.RESET)
-
 
 def check_temperature() :
 	temperature = psutil.sensors_temperatures(fahrenheit=False)
