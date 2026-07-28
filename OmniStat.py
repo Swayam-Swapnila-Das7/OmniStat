@@ -19,23 +19,26 @@ class color :
 	DARKCYAN = '\033[36m'
 	PURPLE = "\033[1;35m"
 	RESET  = "\033[0m"
-
 def check_disk_status() :
 
-	disk = psutil.disk_usage('/')
-	total_space = disk.total / GiB
-	used_space = disk.used / GiB
-	free_space = disk.free / GiB
-
 	print(color.PURPLE+'\n\n=========== SSD/HDD STORAGE STATUS ===========\n'+color.RESET)
-	print(color.YELLOW+f' Total Space : {total_space:.2f} GiB'+color.RESET)
-	print(color.YELLOW+f' Used Space : {used_space:.2f} GiB'+color.RESET)
-	print(color.YELLOW+f' Free Space : {free_space:.2f} GiB'+color.RESET)
+	partitions = psutil.disk_partitions(all = False)
+	mount_points = [partition.mountpoint for partition in partitions]
+	print(color.BLUE+f' Total Partitions found : {len(mount_points)}'+color.RESET)
+	for mount_point in mount_points :
+		disk = psutil.disk_usage(mount_point)
+		total_space = disk.total / GiB
+		used_space = disk.used / GiB
+		free_space = disk.free / GiB
+		print(color.DARKCYAN+f' Checking for partition : {mount_point} '+color.RESET)
+		print(color.YELLOW+f' Total Space : {total_space:.2f} GiB'+color.RESET)
+		print(color.YELLOW+f' Used Space : {used_space:.2f} GiB'+color.RESET)
+		print(color.YELLOW+f' Free Space : {free_space:.2f} GiB'+color.RESET)
 
-	if disk.percent > 85 :
-		print(color.RED+f' [WARRNING] You are running out of storage soon !\n  Now your disk is {disk.percent:.2f}% in used !'+color.RESET)
-	else :
-		print(color.GREEN+f' [SAFE] You have good enough storage .\n  Your disk is {disk.percent:.2f} % used .'+color.RESET)
+		if disk.percent > 85 :
+			print(color.RED+f' [WARRNING] You are running out of storage soon !\n  Now your disk in {color.BLUE}\'{mount_point}\'{color.RESET} is {disk.percent:.2f}% in used !'+color.RESET)
+		else :
+			print(color.GREEN+f' [SAFE] You have good enough storage .\n  Your disk in {color.BLUE}\'{mount_point}\'{color.RESET} is {disk.percent:.2f} % used .'+color.RESET)
 
 def check_cpu_status():
 
@@ -50,6 +53,7 @@ def check_cpu_status():
 
 def check_ram_status():
 	ram = psutil.virtual_memory()
+	swap_memory = psutil.swap_memory()
 	total_ram = ram.total/GiB
 	used_ram = ram.used/GiB
 	available_ram = ram.available/GiB
@@ -63,6 +67,22 @@ def check_ram_status():
 		print(color.RED+f' [WARRNING] Your RAM is running out soon !\n  Now your RAM is {ram.percent:.2f}% in used !'+color.RESET)
 	else :
 		print(color.GREEN+f' [SAFE] You have good enough RAM .\n  Your RAM is {ram.percent:.2f}% used .'+color.RESET)
+
+	print('\n')
+	if swap_memory :
+		total_swap = swap_memory.total/GiB
+		used_swap = swap_memory.used/GiB
+		available_swap = swap_memory.free/GiB
+		print(color.DARKCYAN+' Swap Memory also found'+color.RESET)
+		print(color.DARKCYAN+' ----------------------'+color.RESET)
+		print(color.YELLOW+f' Total SWAP : {total_swap:.2f} GiB'+color.RESET)
+		print(color.YELLOW+f' Used RAM : {used_swap:.2f} GiB'+color.RESET)
+		print(color.YELLOW+f' Available RAM : {available_swap:.2f} GiB'+color.RESET)
+		if swap_memory.percent > 85 :
+			print(color.RED+f' [WARRNING] Your SWAP MEMORY RAM is running out soon !\n  Now your SWAP RAM is {swap_memory.percent:.2f}% in used !'+color.RESET)
+		else :
+			print(color.GREEN+f' [SAFE] You have good enough SWAP RAM .\n  Your RAM is {swap_memory.percent:.2f}% used .'+color.RESET)
+
 
 def check_temperature() :
 	temperature = psutil.sensors_temperatures(fahrenheit=False)
