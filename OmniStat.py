@@ -37,9 +37,9 @@ def check_disk_status() :
 		print(color.YELLOW+f' Free Space : {free_space:.2f} GiB'+color.RESET)
 
 		if disk.percent > 85 :
-			print(color.RED+f' [WARRNING] You are running out of storage soon !\n  Now your disk in {color.BLUE}\'{mount_point}\'{color.RESET} is {disk.percent:.2f}% in used !'+color.RESET)
+			print(color.RED+f' [WARRNING] You are running out of storage soon !\n  Now your disk in {color.BLUE}\'{mount_point}\'{color.RED} is {disk.percent:.2f}% in used !'+color.RESET)
 		else :
-			print(color.GREEN+f' [SAFE] You have good enough storage .\n  Your disk in {color.BLUE}\'{mount_point}\'{color.RESET} is {disk.percent:.2f} % used .'+color.RESET)
+			print(color.GREEN+f' [SAFE] You have good enough storage .\n  Your disk in {color.BLUE}\'{mount_point}\'{color.GREEN} is {disk.percent:.2f} % used .'+color.RESET)
 
 
 def check_cpu_status():
