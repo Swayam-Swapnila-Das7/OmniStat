@@ -101,7 +101,7 @@ $ python OmniStat.py
 
 
 ```
-<img src="ststics/help.jpg" alt = "help menu image">
+<img src="statics/help.jpg" alt = "help menu image">
 
 ### To check CPU details
 ```console
