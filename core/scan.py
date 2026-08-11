@@ -91,7 +91,7 @@ class system_scanning:
         print(color.YELLOW + f" Used RAM : {used_ram:.2f} GiB" + color.RESET)
         print(color.YELLOW + f" Available RAM : {available_ram:.2f} GiB" + color.RESET)
 
-        if ram.percent > 85:
+        if available_ram < 2.5:
             print(
             color.RED
             + f" [WARRNING] Your RAM is running out soon !\n  Now your RAM is {ram.percent:.2f}% in used !"
@@ -114,7 +114,7 @@ class system_scanning:
             print(color.YELLOW + f" Total SWAP : {total_swap:.2f} GiB" + color.RESET)
             print(color.YELLOW + f" Used RAM : {used_swap:.2f} GiB" + color.RESET)
             print(color.YELLOW + f" Available RAM : {available_swap:.2f} GiB" + color.RESET)
-            if swap_memory.percent > 85:
+            if swap_memory.percent > 50:
               print(
                 color.RED
                 + f" [WARRNING] Your SWAP MEMORY RAM is running out soon !\n  Now your SWAP RAM is {swap_memory.percent:.2f}% in used !"
