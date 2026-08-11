@@ -16,8 +16,8 @@ color = color()
 def check_args(arguments):
 	for arg in arguments :
 		if ( not arg.strip() in system_tools) :
-			print('Invalid Argument Passed !')
-			break
+			print(color.RED+f"Invalid Argument Passed!"+color.RESET)
+			exit()
 
 system_tools = {'-c' : system_scanning.check_cpu_status ,
                 '-d' : system_scanning.check_disk_status ,
