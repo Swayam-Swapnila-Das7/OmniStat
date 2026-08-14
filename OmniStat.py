@@ -4,10 +4,10 @@ try :
 	import sys
 	from core.scan import system_scanning,color
 except ModuleNotFoundError :
-	print('[WARRNING] Module not found')
+	print('[WARNING] Module not found')
 	exit()
 except Exception as e :
-	print(f'[WARRNING] : {e}')
+	print(f'[WARNING] : {e}')
 	exit()
 
 system_scanning = system_scanning()
